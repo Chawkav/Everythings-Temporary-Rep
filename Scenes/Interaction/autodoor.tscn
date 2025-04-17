@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://drujnalfrv7ug"]
+
+[ext_resource type="Script" uid="uid://dot1yvj0yat84" path="res://Scripts/AutoDoor.gd" id="1_75t1c"]
+
+[node name="Door" type="Area2D"]
+script = ExtResource("1_75t1c")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

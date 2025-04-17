@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dhoqcnyinnsbw"
+path="res://.godot/imported/Dog Face.aseprite-890388afae892ea3ce591ed24063c54d.res"
+
+[deps]
+
+source_file="res://Art/Characters/NPC's/Main NPC's/Dog/Sprites/Portrait/Dog Face.aseprite"
+dest_files=["res://.godot/imported/Dog Face.aseprite-890388afae892ea3ce591ed24063c54d.res"]
+
+[params]
+

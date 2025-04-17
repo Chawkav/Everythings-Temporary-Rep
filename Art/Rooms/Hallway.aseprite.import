@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b8aw1ygsshh3c"
+path="res://.godot/imported/Hallway.aseprite-27517364abb347b78591d85e54a99955.res"
+
+[deps]
+
+source_file="res://Art/Rooms/Hallway.aseprite"
+dest_files=["res://.godot/imported/Hallway.aseprite-27517364abb347b78591d85e54a99955.res"]
+
+[params]
+

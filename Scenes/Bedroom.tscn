@@ -1,0 +1,414 @@
+[gd_scene load_steps=34 format=4 uid="uid://d2krl0rc1v33x"]
+
+[ext_resource type="PackedScene" uid="uid://eykd4xdm3xqg" path="res://Scenes/Prototype.tscn" id="1_pdpyx"]
+[ext_resource type="PackedScene" uid="uid://cnua2yql7s1r1" path="res://Scenes/Player.tscn" id="2_3n280"]
+[ext_resource type="Script" uid="uid://5uvnh0vhmi5c" path="res://Scripts/room.gd" id="3_cs4vd"]
+[ext_resource type="Script" uid="uid://b8eexf7c5se3e" path="res://Scripts/baseball.gd" id="3_rmu5u"]
+[ext_resource type="PackedScene" uid="uid://cr5c7nheasoa" path="res://Scenes/Interaction/interaction_area.tscn" id="4_wve8q"]
+[ext_resource type="Script" uid="uid://352lpui6s2s3" path="res://Scripts/ExitBedroom.gd" id="5_3gbim"]
+[ext_resource type="Script" uid="uid://b7lquov2qulje" path="res://Scripts/Ysorting.gd" id="6_swbdu"]
+[ext_resource type="Script" uid="uid://h5xbx1lw8666" path="res://Scripts/kitchen.gd" id="8_iwh4a"]
+[ext_resource type="Script" uid="uid://cirtaed018tlv" path="res://Scripts/hall.gd" id="8_o0d8c"]
+[ext_resource type="PackedScene" uid="uid://drujnalfrv7ug" path="res://Scenes/Interaction/autodoor.tscn" id="8_rgpmg"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_swbdu"]
+_data = PackedByteArray("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")
+size_override = Vector2(300, 300)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_2ry0t"]
+_data = PackedByteArray("AAADAAUAAAABAAAALAEAACwBAADCAAAAUklGRroAAABXRUJQVlA4TK0AAAAvK8FKED+gFpIkaCE23PADOH+20yAIIAlhg4FmjXFFbdtAvUB0v3EYf2yb/wAA8P/OYxdTW6gDjiLZVp17Hdzzcf0lfAkoICQA3z7sX0BOOCei/xNg8r/8f28BgJCYrValE7JcrSZGRmBkpEipY6QDCkIMAIxQDw9GAnBGrMmM0jbnpMk4WVdvKrGunJKUXkBXUm7PlOsL6PZUOdSUGGDyv/wv/8v/8r/8L//rywA=")
+size_override = Vector2(300, 300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsdhv"]
+size = Vector2(20, 47.4809)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgvrs"]
+size = Vector2(41, 637.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gbim"]
+size = Vector2(349, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cs4vd"]
+size = Vector2(452, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgpmg"]
+size = Vector2(102, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0d8c"]
+size = Vector2(20, 540)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o633n"]
+size = Vector2(20, 346)
+
+[sub_resource type="GDScript" id="GDScript_swbdu"]
+script/source = "extends InteractionArea
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_swbdu"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_cs4vd"]
+_data = PackedByteArray("AAADAAUAAAABAAAALAEAAMgAAABwBQAAUklGRmgFAABXRUJQVlA4TFsFAAAvK8ExEE+gpm0DNlf1Wl9JVGEjSWnw/XGHKlAQAASa0s0J8x8AAID/rzXtHcVAYFlC0rwYKDkAHLeRaOgDKjBxcu6Z8Z0ogMgDCOgFvR1lAYQfwA/MZug6Sy967kgUyaqimNkR0X8IbiQpklwj7cFCDO8b1N/5A8Vz8NL+l2VZ3q6zLMvHt9t8ikIeTwcvfRtn7t/pU5y7vD186SMUzS/HLwWcf5yTg/OMCMRSANxGpw9Jaql5Rg0GsUvmAMlHk/Wy0bRSMDNss/sDRIk9sRRnQIw3YmojkQzmx4j3GZ9IpfFe/f45+TGnPxBL13VbH7VJLtRSM/kfbn6b+87Nog7kdZujeU59TB+I63b/cY3EeOt1EaSWen/1+7nPt4v3nspMPtqr+xNg+4Mm8xujwXgb/YBI5FZvfHIYODPtSlOHGkBPL53n6AVbLyKyuORZsn1p6gSgGrfVua+L0WuCj59ALS3kuLZfkuNYt/v8jAA+GtvRSkMZrxlL1xNg9oiaad3m2aCG0d9v1YsaLI/4YXvB9/N84+BLDMz8iql03l6AEKGVukJnWqkAl3CPFr0uZCbL8yg4LVdM5+W8jsZ18SiC+LJCXKX3DaAePdJKh6Qrk6EUtTS9vDwDgqEaCwVuXveBa938dmF9MQjYh8qMZYcaI+/t/KINmOa4zC8IcOLz5jC8RT0yuhyHp3MCXMqFiysmcZ0UQLyy5llcOX6aWHpgxL1a+mdeHslPETAIGNrIv/o0O8vkkn+ZAPbS7WWvhoGjNGsQMDDcG99UbuTnYtcUGKncyM8JCHln1OvzOErfcAo10BHHUZp9Cktp/int5UyWhZH8DUqAE1FwE5ro31WyIMJQeskL3N+guJ1x26ksPKdQirVUoyYLEkZ51owSrBDeUpjoRnkXAXEoyxZn5VKuXJwAV43z8ZlCToAT4CpjMi4sDL9Qiq2US6jBNTIIGBidx9hAl/6mxmEqcaaa0rSOsJVeDuOMI50ziAVQO2JpxjVGK43kvqNtL6OacizS4ZQ8A3igTw94HpiDPJLDIhvKBTM7lgWyS2xwNkNkygvk0qkAuXQqEXghh/yDRc1m/y/LA/PYtx8HlDGlfhdgK7UbRhDt1Tx66cQLiodYmnvACLE0sfmStlKZIf8hgxpqiqgqB7bho3pEnPauSdU+dfRmA/TC3aGWuDWmVPwxqOkUmNSlNan2pzJQfYFGjME26WHKacZATnMWO2FbqDFxa2yLPlqwOVQPKW2ZsVHgbJpEQaOoHmLtGYMaVIP0Bk4togDU/3wNFM/BS/tflmV5u86yLB/fbvMpCnk8Hbz0bZy5f6dPce7y9vClj1A0vxy/1Oiu6Aiklqr6Sz8W6mmlq/pLh1KfKitdCZRikSAgCAjt5VYdd6kA96rAohwBToCjCEZb7JhLBYSjwIPAktNVwCBgIB5rHrHjLRXgDqM7hJJfe0dW/csGo2/bA3OpRe51k4Md733LYyV3OjKLiNy62j0ZiHXMsHr4/c37FXbMsH6zBFu9h43dKDYu0rFyQqJH3quex66O6yTRLXomN3UAhecMkV0fK//lCUfLfn0RMMhAAaiOoWsUxa47hk7im0clpTQGVYtAoYEEQNVf+mRNx27Uqv7SBwFOgJPgjeIWxrNEqYBT4RlAVE3pa8gJcPUIRNWUvoaCgCBhEmAEmL8anADXWK26eh/ea3L/PfA3qAazErREqQSBc0ZXU9peoPk9GOBn+Jmz4jedBJxrESieSgWKoVT4O85YCijAn/hLx0JAoFbs069KR2Dl/izSAqwE3Sqt+uUfDkbCJMD840ELQAn6LzgAASAAQP37bBQA")
+size_override = Vector2(300, 200)
+
+[sub_resource type="Animation" id="Animation_rgpmg"]
+resource_name = "Bedroom Door"
+length = 0.81
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.41, 0.51, 0.61),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Hall/Door:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.41, 0.51, 0.61),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Hall/HallwayDoor:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.41, 0.51, 0.61),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_o0d8c"]
+resource_name = "Hall Door"
+length = 0.81
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Hall/HallwayDoor:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.41, 0.51, 0.61),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iwh4a"]
+_data = {
+&"Bedroom Door": SubResource("Animation_rgpmg"),
+&"Hall Door": SubResource("Animation_o0d8c")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwh4a"]
+size = Vector2(96.5, 20)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_3gbim"]
+_data = PackedByteArray("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")
+size_override = Vector2(600, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsf82"]
+size = Vector2(2, 211)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qt6gd"]
+size = Vector2(769, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6n27"]
+size = Vector2(34, 144)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_o633n"]
+_data = PackedByteArray("AAADAAUAAAABAAAALAEAAMgAAABwBQAAUklGRmgFAABXRUJQVlA4TFsFAAAvK8ExEE+gpm0DNlf1Wl9JVGEjSWnw/XGHKlAQAASa0s0J8x8AAID/rzXtHcVAYFlC0rwYKDkAHLeRaOgDKjBxcu6Z8Z0ogMgDCOgFvR1lAYQfwA/MZug6Sy967kgUyaqimNkR0X8IbiQpklwj7cFCDO8b1N/5A8Vz8NL+l2VZ3q6zLMvHt9t8ikIeTwcvfRtn7t/pU5y7vD186SMUzS/HLwWcf5yTg/OMCMRSANxGpw9Jaql5Rg0GsUvmAMlHk/Wy0bRSMDNss/sDRIk9sRRnQIw3YmojkQzmx4j3GZ9IpfFe/f45+TGnPxBL13VbH7VJLtRSM/kfbn6b+87Nog7kdZujeU59TB+I63b/cY3EeOt1EaSWen/1+7nPt4v3nspMPtqr+xNg+4Mm8xujwXgb/YBI5FZvfHIYODPtSlOHGkBPL53n6AVbLyKyuORZsn1p6gSgGrfVua+L0WuCj59ALS3kuLZfkuNYt/v8jAA+GtvRSkMZrxlL1xNg9oiaad3m2aCG0d9v1YsaLI/4YXvB9/N84+BLDMz8iql03l6AEKGVukJnWqkAl3CPFr0uZCbL8yg4LVdM5+W8jsZ18SiC+LJCXKX3DaAePdJKh6Qrk6EUtTS9vDwDgqEaCwVuXveBa938dmF9MQjYh8qMZYcaI+/t/KINmOa4zC8IcOLz5jC8RT0yuhyHp3MCXMqFiysmcZ0UQLyy5llcOX6aWHpgxL1a+mdeHslPETAIGNrIv/o0O8vkkn+ZAPbS7WWvhoGjNGsQMDDcG99UbuTnYtcUGKncyM8JCHln1OvzOErfcAo10BHHUZp9Cktp/int5UyWhZH8DUqAE1FwE5ro31WyIMJQeskL3N+guJ1x26ksPKdQirVUoyYLEkZ51owSrBDeUpjoRnkXAXEoyxZn5VKuXJwAV43z8ZlCToAT4CpjMi4sDL9Qiq2US6jBNTIIGBidx9hAl/6mxmEqcaaa0rSOsJVeDuOMI50ziAVQO2JpxjVGK43kvqNtL6OacizS4ZQ8A3igTw94HpiDPJLDIhvKBTM7lgWyS2xwNkNkygvk0qkAuXQqEXghh/yDRc1m/y/LA/PYtx8HlDGlfhdgK7UbRhDt1Tx66cQLiodYmnvACLE0sfmStlKZIf8hgxpqiqgqB7bho3pEnPauSdU+dfRmA/TC3aGWuDWmVPwxqOkUmNSlNan2pzJQfYFGjME26WHKacZATnMWO2FbqDFxa2yLPlqwOVQPKW2ZsVHgbJpEQaOoHmLtGYMaVIP0Bk4togDU/3wNFM/BS/tflmV5u86yLB/fbvMpCnk8Hbz0bZy5f6dPce7y9vClj1A0vxy/1Oiu6Aiklqr6Sz8W6mmlq/pLh1KfKitdCZRikSAgCAjt5VYdd6kA96rAohwBToCjCEZb7JhLBYSjwIPAktNVwCBgIB5rHrHjLRXgDqM7hJJfe0dW/csGo2/bA3OpRe51k4Md733LYyV3OjKLiNy62j0ZiHXMsHr4/c37FXbMsH6zBFu9h43dKDYu0rFyQqJH3quex66O6yTRLXomN3UAhecMkV0fK//lCUfLfn0RMMhAAaiOoWsUxa47hk7im0clpTQGVYtAoYEEQNVf+mRNx27Uqv7SBwFOgJPgjeIWxrNEqYBT4RlAVE3pa8gJcPUIRNWUvoaCgCBhEmAEmL8anADXWK26eh/ea3L/PfA3qAazErREqQSBc0ZXU9peoPk9GOBn+Jmz4jedBJxrESieSgWKoVT4O85YCijAn/hLx0JAoFbs069KR2Dl/izSAqwE3Sqt+uUfDkbCJMD840ELQAn6LzgAASAAQP37bBQA")
+size_override = Vector2(300, 200)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_rgpmg"]
+_data = PackedByteArray("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")
+size_override = Vector2(800, 800)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23pcv"]
+size = Vector2(102, 133)
+
+[node name="World" type="Node2D"]
+y_sort_enabled = true
+
+[node name="TextBox" parent="." instance=ExtResource("1_pdpyx")]
+
+[node name="Player" parent="." instance=ExtResource("2_3n280")]
+position = Vector2(568, 421)
+
+[node name="Room" type="StaticBody2D" parent="."]
+show_behind_parent = true
+z_index = -1
+metadata/_edit_lock_ = true
+
+[node name="RoomSprite" type="Sprite2D" parent="Room"]
+z_index = -2
+texture_filter = 1
+position = Vector2(571, 278)
+scale = Vector2(2, 2)
+texture = SubResource("PortableCompressedTexture2D_swbdu")
+script = ExtResource("3_cs4vd")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "Player/MovementPlayer",
+"slice": "",
+"source": "res://Art/Rooms/Bedroom.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "efccb537ceba9a473bf7758f70a1d49d"
+metadata/_edit_lock_ = true
+
+[node name="Baseball" type="Sprite2D" parent="Room/RoomSprite"]
+texture_filter = 1
+position = Vector2(-47.445, 14.7225)
+texture = SubResource("PortableCompressedTexture2D_2ry0t")
+script = ExtResource("3_rmu5u")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://Art/Decorations/BaseballBat.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "8b9c48db861b5d138088d2b37e207d9f"
+
+[node name="InteractionArea" parent="Room/RoomSprite/Baseball" instance=ExtResource("4_wve8q")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/RoomSprite/Baseball/InteractionArea"]
+position = Vector2(-43.91, -52.999)
+scale = Vector2(0.64, 1)
+shape = SubResource("RectangleShape2D_nsdhv")
+
+[node name="Bottom" type="CollisionShape2D" parent="Room"]
+position = Vector2(570, 599)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_cgvrs")
+metadata/_edit_lock_ = true
+
+[node name="Left Top" type="CollisionShape2D" parent="Room"]
+position = Vector2(446.5, 230.5)
+shape = SubResource("RectangleShape2D_3gbim")
+
+[node name="Right Top" type="CollisionShape2D" parent="Room"]
+position = Vector2(949, 230.53)
+shape = SubResource("RectangleShape2D_cs4vd")
+
+[node name="Door Coll" type="CollisionShape2D" parent="Room"]
+position = Vector2(671, 230.595)
+shape = SubResource("RectangleShape2D_rgpmg")
+
+[node name="Left" type="CollisionShape2D" parent="Room"]
+position = Vector2(256, 308)
+shape = SubResource("RectangleShape2D_o0d8c")
+
+[node name="Right" type="CollisionShape2D" parent="Room"]
+position = Vector2(885, 405)
+shape = SubResource("RectangleShape2D_o633n")
+
+[node name="BedExit" type="StaticBody2D" parent="."]
+script = ExtResource("5_3gbim")
+metadata/_edit_lock_ = true
+
+[node name="InteractionArea" parent="BedExit" instance=ExtResource("4_wve8q")]
+position = Vector2(673, 237)
+scale = Vector2(2.215, 1)
+script = SubResource("GDScript_swbdu")
+
+[node name="BedDoorColl" type="CollisionShape2D" parent="BedExit/InteractionArea"]
+unique_name_in_owner = true
+position = Vector2(0, -16.155)
+scale = Vector2(2.215, 3.535)
+shape = SubResource("RectangleShape2D_swbdu")
+
+[node name="Door" type="Sprite2D" parent="BedExit"]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(671, 196)
+scale = Vector2(2, 2)
+texture = SubResource("PortableCompressedTexture2D_cs4vd")
+hframes = 3
+vframes = 2
+script = ExtResource("6_swbdu")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "Exit/DoorAnimator",
+"slice": "",
+"source": "res://Art/Rooms/Door.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "59a955a6c2e568d62b9458628ab688ca"
+
+[node name="DoorAnimator" type="AnimationPlayer" parent="BedExit"]
+libraries = {
+&"": SubResource("AnimationLibrary_iwh4a")
+}
+
+[node name="DoorColl" type="Area2D" parent="BedExit"]
+position = Vector2(671.59, 190.02)
+collision_mask = 2
+
+[node name="BedDoorAnimColl" type="CollisionShape2D" parent="BedExit/DoorColl"]
+shape = SubResource("RectangleShape2D_iwh4a")
+
+[node name="Hall" type="StaticBody2D" parent="."]
+script = ExtResource("8_o0d8c")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Hall"]
+z_index = -5
+texture_filter = 1
+position = Vector2(729, 154)
+scale = Vector2(2, 2)
+texture = SubResource("PortableCompressedTexture2D_3gbim")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://Art/Rooms/Hallway.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "9ae1e123477e63026bb560e0420afeaa"
+metadata/_edit_lock_ = true
+
+[node name="Right" type="CollisionShape2D" parent="Hall"]
+position = Vector2(1175, 125.5)
+shape = SubResource("RectangleShape2D_rsf82")
+
+[node name="Top Right" type="CollisionShape2D" parent="Hall"]
+position = Vector2(790.5, 71.5)
+shape = SubResource("RectangleShape2D_qt6gd")
+
+[node name="KitchLeft" type="CollisionShape2D" parent="Hall"]
+position = Vector2(282, -3)
+shape = SubResource("RectangleShape2D_t6n27")
+
+[node name="KitchRight" type="CollisionShape2D" parent="Hall"]
+position = Vector2(423, -3)
+shape = SubResource("RectangleShape2D_t6n27")
+
+[node name="KitchTop" type="CollisionShape2D" parent="Hall"]
+position = Vector2(348, -74.7)
+skew = 1.56905
+shape = SubResource("RectangleShape2D_t6n27")
+
+[node name="HallwayDoor" type="Sprite2D" parent="Hall"]
+z_index = -4
+texture_filter = 1
+position = Vector2(643, 36)
+scale = Vector2(2, 2)
+texture = SubResource("PortableCompressedTexture2D_o633n")
+hframes = 3
+vframes = 2
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "BedExit/DoorAnimator",
+"slice": "",
+"source": "res://Art/Rooms/Door.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "59a955a6c2e568d62b9458628ab688ca"
+
+[node name="Kitchen" type="StaticBody2D" parent="."]
+visible = false
+script = ExtResource("8_iwh4a")
+metadata/_edit_lock_ = true
+
+[node name="KitchenSprite" type="Sprite2D" parent="Kitchen"]
+z_index = -6
+texture_filter = 1
+position = Vector2(324, 84)
+scale = Vector2(2, 2)
+texture = SubResource("PortableCompressedTexture2D_rgpmg")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://Art/Rooms/Kitchen and Living Room.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "98eada30d3990d06491855bc7857138c"
+metadata/_edit_lock_ = true
+
+[node name="KitchenDoor" parent="." instance=ExtResource("8_rgpmg")]
+collision_mask = 2
+Entering = "Kitchen"
+
+[node name="Apple" type="CollisionShape2D" parent="KitchenDoor"]
+position = Vector2(352, -8.5)
+shape = SubResource("RectangleShape2D_23pcv")
+
+[connection signal="body_entered" from="BedExit/DoorColl" to="Room/RoomSprite" method="_on_door_coll_body_entered"]
+[connection signal="body_entered" from="BedExit/DoorColl" to="BedExit" method="_on_door_coll_body_entered"]
+[connection signal="body_entered" from="BedExit/DoorColl" to="BedExit/Door" method="_on_door_coll_body_entered"]
+[connection signal="body_entered" from="KitchenDoor" to="Hall" method="_on_kitchen_door_body_entered"]
+[connection signal="body_entered" from="KitchenDoor" to="Kitchen" method="_on_kitchen_door_body_entered"]

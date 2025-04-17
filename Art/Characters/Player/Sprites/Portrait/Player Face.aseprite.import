@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://doi04khf4tvwt"
+path="res://.godot/imported/Player Face.aseprite-53e3e8ae33d26bf2cf0e2d869ac855fa.res"
+
+[deps]
+
+source_file="res://Art/Characters/Player/Sprites/Portrait/Player Face.aseprite"
+dest_files=["res://.godot/imported/Player Face.aseprite-53e3e8ae33d26bf2cf0e2d869ac855fa.res"]
+
+[params]
+

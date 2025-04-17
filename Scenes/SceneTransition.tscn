@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://ysfylcg3mns"]
+
+[ext_resource type="Script" uid="uid://co0pl5hciksaw" path="res://Scripts/Scene_Trans.gd" id="1_87k27"]
+
+[sub_resource type="Animation" id="Animation_steog"]
+resource_name = "Fade"
+length = 0.34
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dissolve_rect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 3.36358),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_iuxsw"]
+resource_name = "RESET"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dissolve_rect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0dde1"]
+_data = {
+&"Fade": SubResource("Animation_steog"),
+&"RESET": SubResource("Animation_iuxsw")
+}
+
+[node name="SceneTransition" type="CanvasLayer"]
+script = ExtResource("1_87k27")
+
+[node name="dissolve_rect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1159.0
+offset_bottom = 662.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0dde1")
+}
